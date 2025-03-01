@@ -1,0 +1,118 @@
+/* Header Styles */
+.sticky-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #121212;
+    color: white;
+    padding: 1.5rem 2rem;
+    position: sticky;
+    top: 0;
+    width: 95%;
+    z-index: 1000;
+  }
+  
+  /* Logo Styles */
+  .logoWrapper {
+    display: flex;
+    align-items: center;
+  }
+  
+  .innova-logo {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+  }
+  
+  .logo {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .INNOVA {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #00bcd4;
+  }
+  
+  .tagline {
+    font-size: 0.9rem;
+    color: #bbb;
+  }
+  
+  /* Desktop Navigation */
+  .desktop-nav {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  
+  .nav-link:hover {
+    color: #00bcd4;
+  }
+  
+  /* Dropdown */
+  .solutions-container {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .solutions {
+    color: white;
+    font-weight: 500;
+  }
+  
+  .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #222;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .dropdown-item {
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+    transition: background 0.3s;
+  }
+  
+  .dropdown-item:hover {
+    background: #00bcd4;
+    color: black;
+  }
+  
+  /* Mobile Nav */
+  .mobile-nav {
+    display: none;
+  }
+  
+  .bar-icon {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .desktop-nav {
+      display: none;
+    }
+  
+    .mobile-nav {
+      display: block;
+    }
+  }
+  
