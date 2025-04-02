@@ -22,4 +22,17 @@
     max-width: 600px;
     margin-top: 10px;
   }
+  .video-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .video {
+    width: 80%;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
   
