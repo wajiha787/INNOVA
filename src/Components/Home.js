@@ -1,5 +1,10 @@
 import React from "react";
 import "../Styles/Home.css"; 
+import Voicetrans from "./voicetrans";
+import EditingStudio from "./EditingStudio";
+import StepsComponent from "./StepsComponent";
+import Homepricing from "./Homepricing";
+import Footer from "./Footer";
 
 
 export default function Home() {
@@ -19,6 +24,11 @@ export default function Home() {
         </video>
       </div>
 
+    <Voicetrans/>
+    <EditingStudio/>
+    <StepsComponent/>
+    <Homepricing/>
+    <Footer/>
     </div>
   );
 }

@@ -4,13 +4,15 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 70vh; /* Center content vertically */
+    height: 130vh; /* Center content vertically */
     text-align: center;
+    margin-top: 182vw;
   }
   
   .heading {
     font-size: 2.5rem;
     font-weight: bold;
+    font-family:Georgia, 'Times New Roman', Times, serif;
     background: linear-gradient(to right, #5316e1,#e8a2e7);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -26,13 +28,13 @@
     display: flex;
     justify-content: center;
     margin-top: 20px;
+    max-width: 800px;
   }
   
   .video {
-    width: 80%;
-    max-width: 800px;
+    width: 100%;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   }
-  
+   
   
