@@ -4,6 +4,8 @@ import Explore from "./Pages/Explore";
 import Create from "./Pages/Create";
 import Contact from "./Pages/Contact";
 import About from "./Pages/About";
+import Signup from './Components/Signup';
+import Login from './Components/login'; // Fixed capitalization
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
         <Route path="/create" element={<Create />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
+        <Route path="/Signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </Router>
   );

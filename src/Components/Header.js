@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../Styles/Header.css";
-import Drawer from "./Drawer"; // Create this component separately for mobile menu
-// Replace with your actual logo image
+import Drawer from "./Drawer";
 import { FaBars } from "react-icons/fa";
 
 function Header() {
@@ -16,7 +15,6 @@ function Header() {
   return (
     <header className="sticky-header">
       <div className="logoWrapper">
-        
         <div className="logo">
           <span className="INNOVA">INNOVA</span>
           <span className="tagline">AI Prompt Reel Generator</span>
@@ -45,6 +43,9 @@ function Header() {
 
         <Link to="/about" className="nav-link">About</Link>
         <Link to="/contact" className="nav-link">Contact</Link>
+        
+        {/* Single sign-up/login button */}
+        <Link to="/signup" className="nav-link signup-btn">Signup/Login</Link>
       </nav>
 
       {/* Mobile Nav - Hamburger Menu */}
