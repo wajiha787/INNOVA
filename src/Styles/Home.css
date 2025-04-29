@@ -1,0 +1,40 @@
+/* Home.css */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 130vh; /* Center content vertically */
+    text-align: center;
+    margin-top: 182vw;
+  }
+  
+  .heading {
+    font-size: 2.5rem;
+    font-weight: bold;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    background: linear-gradient(to right, #5316e1,#e8a2e7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .content {
+    font-size: 1.2rem;
+    color: #555;
+    max-width: 600px;
+    margin-top: 10px;
+  }
+  .video-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    max-width: 800px;
+  }
+  
+  .video {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+   
+  

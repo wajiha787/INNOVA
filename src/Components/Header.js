@@ -5,7 +5,8 @@ import Drawer from "./Drawer";
 import { FaBars } from "react-icons/fa";
 
 function Header() {
-  const [showDropdown, setShowDropdown] = useState(false);
+  const [showAIDropdown, setShowAIDropdown] = useState(false);
+  const [showStudioDropdown, setShowStudioDropdown] = useState(false);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   const toggleDrawer = () => {
@@ -14,48 +15,63 @@ function Header() {
 
   return (
     <header className="sticky-header">
-      <div className="logoWrapper">
-        <div className="logo">
-          <span className="INNOVA">INNOVA</span>
-          <span className="tagline">AI Prompt Reel Generator</span>
-        </div>
-      </div>
 
-      <nav className="desktop-nav">
-        <Link to="/" className="nav-link">Home</Link>
 
-        {/* Dropdown for AI Categories */}
+      <div className="main-nav-container">
+        {/* AI Solutions Dropdown */}
         <div 
-          className="solutions-container"
-          onMouseEnter={() => setShowDropdown(true)}
-          onMouseLeave={() => setShowDropdown(false)}
+          className="dropdown-container"
+          onMouseEnter={() => setShowAIDropdown(true)}
+          onMouseLeave={() => setShowAIDropdown(false)}
         >
-          <span className="solutions">AI Solutions ▾</span>
-          {showDropdown && (
+          <span className="dropdown-trigger">INNOVA AI▾</span>
+          {showAIDropdown && (
             <div className="dropdown">
-              <Link to="/explore" className="dropdown-item">Explore Prompts</Link>
-              <Link to="/create" className="dropdown-item">Create Prompt</Link>
-              <Link to="/trending" className="dropdown-item">Trending Reels</Link>
-              <Link to="/custom-ai" className="dropdown-item">Custom AI Models</Link>
+              <Link to="/explore" className="dropdown-item">AI video generator</Link>
+              <Link to="/create" className="dropdown-item">AI Image generator</Link>
+              <Link to="/trending" className="dropdown-item">AI subtitle generator</Link>
+              <Link to="/custom-ai" className="dropdown-item">Voiceover generator</Link>
             </div>
           )}
         </div>
 
-        <Link to="/about" className="nav-link">About</Link>
-        <Link to="/contact" className="nav-link">Contact</Link>
-        
-        {/* Single sign-up/login button */}
-        <Link to="/signup" className="nav-link signup-btn">Signup/Login</Link>
-      </nav>
+        {/* Studio Dropdown */}
+        <div 
+          className="dropdown-container"
+          onMouseEnter={() => setShowStudioDropdown(true)}
+          onMouseLeave={() => setShowStudioDropdown(false)}
+        >
+          <span className="dropdown-trigger">INNOVA Studio▾</span>
+          {showStudioDropdown && (
+            <div className="dropdown studio-dropdown">
+              <div className="dropdown-columns">
+                <div className="dropdown-column">
+                  <div className="dropdown-heading">Studio</div>
+                  <Link to="/video-editor" className="dropdown-item">Video Editor</Link>
+                  <Link to="/picture-video" className="dropdown-item">Picture Video Maker</Link>
+                  <Link to="/add-text" className="dropdown-item">Add Text to Video</Link>
+                  <Link to="/compressor" className="dropdown-item">MP4 Compressor</Link>
+                  <Link to="/compressor" className="dropdown-item">Video Trimmer</Link>
+                </div>
+                <div className="dropdown-column">
+                  <div className="dropdown-heading">Templates</div>
+                  <Link to="/business-template" className="dropdown-item">Business Video Template</Link>
+                  <Link to="/slideshow-template" className="dropdown-item">Slideshow Template</Link>
+                  <Link to="/social-template" className="dropdown-item">Social Media Video Template</Link>
+                  <Link to="/ad-template" className="dropdown-item">Advertisement Video Template</Link>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
 
-      {/* Mobile Nav - Hamburger Menu */}
+      {/* Mobile menu */}
       <div className="mobile-nav">
         <button className="bar-icon" onClick={toggleDrawer}>
           <FaBars />
         </button>
       </div>
 
-      {/* Drawer Component for Mobile Navigation */}
       {isDrawerOpen && <Drawer toggleDrawer={toggleDrawer} />}
     </header>
   );
