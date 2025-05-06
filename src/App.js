@@ -3,19 +3,21 @@ import Header from "./Components/Header";
 import Home from "./Components/Home";
 import Explore from "./Pages/Explore";
 import Create from "./Pages/Create";
-import Contact from "./Pages/Contact";
+import TeamsH from "./Components/TeamsH";
 import About from "./Pages/About";
+import PricingH from "./Components/PricingH";
+
 
 function App() {
   return (
     <Router>
       <Header />
-      <Home />
       <Routes>
-        <Route path="/" element={<Explore />} />
+        <Route path="/" element={<Home />} />               {/* Set Home here */}
         <Route path="/explore" element={<Explore />} />
         <Route path="/create" element={<Create />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/teamsH" element={<TeamsH />} />
+        <Route path="/pricingH" element={<PricingH />} />
         <Route path="/about" element={<About />} />
       </Routes>
     </Router>

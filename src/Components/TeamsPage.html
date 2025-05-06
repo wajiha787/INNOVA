@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Teams - Innova</title>
+  <link rel="stylesheet" href="teams.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Innova Teams</h1>
+
+    <div id="teamsList"></div>
+
+    <div class="button-group">
+      <button onclick="showJoinTeam()">Join Team</button>
+      <button onclick="showCreateTeam()">Create Team</button>
+    </div>
+
+    <div id="joinTeamSection" class="hidden">
+      <h3>Join a Team</h3>
+      <input type="text" id="joinCode" placeholder="Enter team code">
+      <button onclick="joinTeam()">Join</button>
+    </div>
+
+    <div id="createTeamSection" class="hidden">
+      <h3>Create a New Team</h3>
+      <input type="text" id="teamName" placeholder="Team name">
+      <textarea id="teamDesc" placeholder="Team description"></textarea>
+      <button onclick="createTeam()">Create Team</button>
+    </div>
+  </div>
+
+ <script src="teams.js"></script>
+</body>
+</html>

@@ -15,7 +15,8 @@ function Header() {
 
   return (
     <header className="sticky-header">
-      <span className="INNOVA">INNOVA</span>
+      <Link to="/" className="INNOVA">INNOVA</Link>
+
 
       <div className="main-nav-container">
         {/* AI Solutions Dropdown */}
@@ -66,9 +67,9 @@ function Header() {
         </div>
 
         {/* Regular navigation items */}
-        <Link to="/help" className="nav-link">Help</Link>
-        <Link to="/team-work" className="nav-link">Team Work</Link>
-        <Link to="/pricing" className="nav-link">Pricing</Link>
+        
+        <Link to="/teamsH" className="nav-link">Team Work</Link> 
+        <Link to="/pricingH" className="nav-link">Pricing</Link>
       </div>
 
       {/* Auth links - separate on the right */}
