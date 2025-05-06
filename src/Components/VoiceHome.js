@@ -1,7 +1,7 @@
 import React from 'react';
-import '../Styles/voicetrans.css';
+import '../Styles/voicehome.css';
 
-export default function Voicetrans() {
+export default function VoiceHome() {
   return (
     <div className="voicetrans-container">
       <h2 className="voice-heading">Voice of your Imagination</h2>

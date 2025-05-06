@@ -1,8 +1,8 @@
 import React from "react";
 import "../Styles/Home.css"; 
-import Voicetrans from "./voicetrans";
-import EditingStudio from "./EditingStudio";
-import StepsComponent from "./StepsComponent";
+import Voicehome from "./VoiceHome";
+import Editinghome from "./EditingHome";
+import Stepshome from "./StepsHome";
 import Homepricing from "./Homepricing";
 import Footer from "./Footer";
 
@@ -24,9 +24,9 @@ export default function Home() {
         </video>
       </div>
 
-    <Voicetrans/>
-    <EditingStudio/>
-    <StepsComponent/>
+    <Voicehome/>
+    <Editinghome/>
+    <Stepshome/>
     <Homepricing/>
     <Footer/>
     </div>

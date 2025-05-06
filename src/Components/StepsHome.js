@@ -1,7 +1,7 @@
 import React from 'react';
-import '../Styles/StepsComponent.css';
+import '../Styles/Stepshome.css';
 
-export default function StepsComponent() {
+export default function StepsHome() {
   return (
     <div className="steps-container">
       <h2 className="main-heading">Watch How INNOVA Crafts Your Video</h2>

@@ -1,7 +1,7 @@
 import React from 'react';
-import '../Styles/editingstudio.css';
+import '../Styles/editinghome.css';
 
-export default function EditingStudio() {
+export default function EditingHome() {
   return (
     <div className="editingstudio-outer">
       <div className="editingstudio-container">
