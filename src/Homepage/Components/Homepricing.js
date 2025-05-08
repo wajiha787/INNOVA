@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../Styles/Homepricing.css';
+import '../../Styles/Homepricing.css';
 
 export default function Homepricing() {
   const [isYearly, setIsYearly] = useState(false);

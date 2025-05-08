@@ -1,5 +1,5 @@
 import React from 'react';
-import '../Styles/Stepshome.css';
+import "../../Styles/Stepshome.css"
 
 export default function StepsHome() {
   return (

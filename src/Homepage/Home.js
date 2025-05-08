@@ -1,10 +1,10 @@
 import React from "react";
 import "../Styles/Home.css"; 
-import Voicehome from "./VoiceHome";
-import Editinghome from "./EditingHome";
-import Stepshome from "./StepsHome";
-import Homepricing from "./Homepricing";
-import Footer from "./Footer";
+import Voicehome from "./Components/VoiceHome";
+import Editinghome from "./Components/EditingHome";
+import Stepshome from "./Components/StepsHome";
+import Homepricing from "./Components/Homepricing";
+import Footer from "./Components/Footer";
 
 
 export default function Home() {

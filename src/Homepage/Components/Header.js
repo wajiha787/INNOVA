@@ -49,7 +49,7 @@ function Header() {
                 <div className="dropdown-column">
                   <div className="dropdown-heading">Studio</div>
                   <Link to="/video-editor" className="dropdown-item">Video Editor</Link>
-                  <Link to="/picture-video" className="dropdown-item">Picture Video Maker</Link>
+                  <Link to="/picture-video" className="dropdown-item">Picture To Video Maker</Link>
                   <Link to="/add-text" className="dropdown-item">Add Text to Video</Link>
                   <Link to="/compressor" className="dropdown-item">MP4 Compressor</Link>
                   <Link to="/compressor" className="dropdown-item">Video Trimmer</Link>

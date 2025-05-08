@@ -1,5 +1,5 @@
 import React from 'react';
-import '../Styles/editinghome.css';
+import '../../Styles/editinghome.css';
 
 export default function EditingHome() {
   return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import '../Styles/voicehome.css';
+import '../../Styles/voicehome.css';
 
 export default function VoiceHome() {
   return (

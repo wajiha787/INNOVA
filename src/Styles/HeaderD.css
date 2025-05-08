@@ -1,0 +1,87 @@
+.header-container {
+  height: 50px;
+  width: calc(100% - 160px);  /* 100% minus the sidebar width */
+  margin-left: 160px;          
+  background-color: #fff;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 1.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: fixed;
+  top: 0;
+  left: 20px;                 /* Start where the sidebar ends */
+  z-index: 100;
+  border-radius: 8px;
+  gap: 26rem;
+}
+
+  
+  .search-bar input {
+    padding: 10px 65px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  
+  .search-bar input:focus {
+    border-color: #c46acf;
+  }
+  
+  .header-icons {
+    display: flex;
+    align-items: center;
+  }
+  
+  .icon {
+    font-size: 1.4rem;
+    cursor: pointer;
+    color: #555;
+    transition: color 0.2s;
+    margin-left: 20px;
+    margin-right: 10px;
+  }
+  
+  .icon:hover {
+    color: #c46acf;
+  }
+  
+  .profile-pic {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  .search-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-bar input {
+    padding: 10px 15px 10px 40px; /* left padding to make space for icon */
+    width: 320px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  
+  .search-icon {
+    position: absolute;
+    left: 15px;
+    font-size: 1rem;
+    color: #888;
+  }
+  .header-icons .icon:last-child {
+    margin-left: 10px;
+  }
+    
