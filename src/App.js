@@ -1,4 +1,4 @@
-//import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // import Header from "./Components/Header";
 // import Home from "./Components/Home";
 // import Explore from "./Pages/Explore";
@@ -7,11 +7,16 @@
 // import About from "./Pages/About";
 // import PricingH from "./Components/PricingH";
 import Dashboard from "./Dashboard/Dashboard";
+import VideoGenerator from './Dashboard/componentsD/Createvidpg1';
 
-
-function App() {
+function App() { 
   return (
-    <Dashboard/>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/create-video" element={<VideoGenerator />} />
+      </Routes>
+    </Router>
   );
 }
 

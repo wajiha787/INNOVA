@@ -9,7 +9,10 @@ const Sidebar = () => {
 
       <div className="sidebar-nav">
         <p className='nav-item'>Create image</p>
-        <button className='createreel'>+ Create Ad</button>
+        <Link to="/create-video">
+          <button className='createreel'>+ Create Ad</button>
+        </Link>
+        <p className='nav-item'>Create Team</p>
         <p className='nav-item'>Create Subtitles</p>
         <p className='nav-item'>Create voice over</p>
         <p className='nav-item'>Create picture To video</p>

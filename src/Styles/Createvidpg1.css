@@ -1,0 +1,46 @@
+.container {
+  padding: 20px;
+  text-align: center;
+}
+
+.heading {
+  font-size: 28px;
+  font-weight: bold;
+  color: #180575;
+   text-decoration: underline;          /* <-- this underlines the text */
+  text-underline-offset: 4px;  
+  margin-bottom: 20px;
+}
+.heading-m {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+
+.face-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 110px;
+  border: 5px solid #f218f2;
+  border-radius: 12px;
+}
+
+.face-grid img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.step-button {
+  padding: 10px 60px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+}
