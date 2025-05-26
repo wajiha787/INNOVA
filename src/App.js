@@ -1,4 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React from 'react';
+
 // import Header from "./Components/Header";
 // import Home from "./Components/Home";
 // import Explore from "./Pages/Explore";
@@ -8,6 +10,11 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // import PricingH from "./Components/PricingH";
 import Dashboard from "./Dashboard/Dashboard";
 import VideoGenerator from './Dashboard/componentsD/Createvidpg1';
+import ProfileSettings from './ProfileSettings/ProfileSettings'; // Make sure path is correct
+import TeamCollab from "./TeamCollab/TeamCollab";
+import AdminCommandHub from "./AdminCommandHub/AdminCommandHub" 
+
+
 
 function App() { 
   return (
@@ -15,6 +22,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route path="/create-video" element={<VideoGenerator />} />
+        <Route path="/profile-settings" element={<ProfileSettings />} />
+        <Route path="/team-collaboration" element={<TeamCollab />} />
+        <Route path="/admin" element={<AdminCommandHub />} /> 
       </Routes>
     </Router>
   );
