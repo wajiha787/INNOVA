@@ -31,33 +31,77 @@ export default function Createvidpg1() {
       </div>
 
       {/* Content Area */}
-      <div className="content-area">
-        <h2 className="main-heading">Step 1: Choose Your AI Model</h2>
-        <div className="face-grid">
-          <img src='./videos/face1.png' alt="Face 1" />
-          <img src='./videos/face2.png' alt="Face 2" />
-          <img src='./videos/face3.png' alt="Face 3" />
-          <img src='./videos/face4.png' alt="Face 4" />
-          <img src='./videos/face5.png' alt="Face 5" />
-          <img src='./videos/face6.png' alt="Face 6" />
-          <img src='./videos/face7.png' alt="Face 7" />
+      <div className="content-area">     
+        <div className="model-section">
+          <h3 className="section-heading">Choose Real Life AI Model</h3>
+          <div className="face-grid">
+            <img src='/videos/face2.png' alt="Face 2" />
+            <img src='/videos/face4.png' alt="Face 4" />
+            <img src='/videos/face6.png' alt="Face 6" />
+            <img src='/videos/face7.png' alt="Face 7" />
 
-          <div className="upload-box" onClick={handleUploadClick}>
-            
-            <input
-              type="file"
-              accept="image/*"
-              ref={fileInputRef}
-              onChange={handleFileChange}
-              style={{ display: 'none' }}
-            />
-            <p>Upload Model</p>
-            <span className="plus-sign">+</span>
+            <div className="upload-box" onClick={handleUploadClick}>
+              <input
+                type="file"
+                accept="image/*"
+                ref={fileInputRef}
+                onChange={handleFileChange}
+                style={{ display: 'none' }}
+              />
+              <p>Upload Model</p>
+              <span className="plus-sign">+</span>
+            </div>
           </div>
         </div>
 
+       
+        <div className="model-section">
+          <h3 className="section-heading">Choose Cartoon Model</h3>
+          <div className="face-grid">
+            <img src='/videos/Avatar1.png' alt="Cartoon 1" />
+            <img src='/videos/Avatar2.png' alt="Cartoon 2" />
+            <img src='/videos/Avatar3.png' alt="Cartoon 3" />
+            <img src='/videos/Avatar4.png' alt="Cartoon 4" />
+            
+
+            <div className="upload-box" onClick={handleUploadClick}>
+              <input
+                type="file"
+                accept="image/*"
+                ref={fileInputRef}
+                onChange={handleFileChange}
+                style={{ display: 'none' }}
+              />
+              <p>Upload Model</p>
+              <span className="plus-sign">+</span>
+            </div>
+          </div>
+        </div>
+        
+
+       <div className="model-section">
+  <h3 className="section-heading">Design Yourself</h3>
+  
+    <textarea
+      className="design-prompt"
+      placeholder="Enter your model description or prompt here..."
+      rows={4}
+      
+    />
+    <button
+      className="design-button"
+      onClick={() => alert('Prompt submitted!')}
+    >
+      Submit Prompt
+    </button>
+
+</div>
+
+
+
         <button className="step-button">Next: Choose voiceover →</button>
       </div>
-    </div>
+      </div>
+    
   );
 }

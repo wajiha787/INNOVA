@@ -1,54 +1,58 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import "../Styles/Signup.css";
-import axios from 'axios'
+import { auth, provider } from './firebaseconfig';
+import { signInWithPopup } from 'firebase/auth';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate(); // 👈 for navigation without page reload
 
   const handleEmailSignup = async (e) => {
-  e.preventDefault();
-  try {
-    const res = await fetch('http://localhost:5000/api/auth/login', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, password })
-    });
+    e.preventDefault();
+    try {
+      const res = await fetch('http://localhost:5000/api/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password })
+      });
 
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.message || 'Login failed');
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.message || 'Login failed');
 
-    alert('Login successful');
-    window.location.href = '/dashboard';
-  } catch (err) {
-    alert(err.message);
-    console.error(err);
-  }
-};
-
+      alert('Login successful');
+      navigate('/dashboard'); // 👈 navigate without full page reload
+    } catch (err) {
+      alert(err.message);
+      console.error(err);
+    }
+  };
 
   const handleGoogleSignup = async () => {
     try {
-      const mockGoogleData = {
-        email: 'user@example.com',
-        name: 'Google User',
-        googleId: '12345google'
-      };
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
 
       const res = await fetch('http://localhost:5000/api/auth/google', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(mockGoogleData)
+        body: JSON.stringify({
+          email: user.email,
+          name: user.displayName,
+          googleId: user.uid
+        })
       });
 
       const data = await res.json();
       if (!res.ok) throw new Error(data.message);
+
       localStorage.setItem('token', data.token);
-      alert('Google signup successful!');
-      window.location.href = '/dashboard';
+      alert('Google login successful!');
+      navigate('/dashboard'); // 👈 navigate to dashboard
     } catch (err) {
-      alert(err.message);
+      console.error(err);
+      alert(err.message || "Google login failed");
     }
   };
 
@@ -84,17 +88,15 @@ const Login = () => {
             onChange={e => setPassword(e.target.value)}
             required
           />
-          <Link to='/dashboard'>
           <button type="submit" className="create-account-button">Login</button>
-          </Link>
         </form>
 
         <div className="forgot-password-link">
-          <Link to="/forgot-password">Forgot Password?</Link>
+          <Link to="/forgotpass">Forgot Password?</Link>
         </div>
 
         <div className="login-prompt">
-          Dont have an account? <Link to="/signup" className="login-link">Signup</Link>
+          Don't have an account? <Link to="/signup" className="login-link">Signup</Link>
         </div>
 
         <div className="terms">
@@ -103,9 +105,9 @@ const Login = () => {
       </div>
 
       <div className="preview-section">
-        <div className="video-box">
+        <div className="video-box1">
           <video controls autoPlay muted loop className="video">
-            <source src="/videos/Hamburger-Ad.mp4" type="video/mp4" />
+            <source src="/videos/Water-bottleAd.mp4" type="video/mp4" />
           </video>
         </div>
       </div>

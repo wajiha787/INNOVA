@@ -1,78 +1,46 @@
- import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import "../Styles/ForgotPassword.css"
 
-const Forgotpass = () => {
+function Forgotpassword() {
   const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
-  const [isError, setIsError] = useState(false);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsLoading(true);
-    setMessage('');
-    setIsError(false);
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  try {
+    const res = await fetch('http://localhost:5000/api/auth/forgot-password', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email }),
+    });
 
-    try {
-      const res = await fetch('http://localhost:5000/api/auth/forgot-password', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email })
-      });
+    const data = await res.json();
 
-      const data = await res.json();
-      
-      if (!res.ok) {
-        throw new Error(data.message || 'Failed to process password reset request');
-      }
-
-      setMessage('Password reset link sent to your email');
-    } catch (err) {
-      setIsError(true);
-      setMessage(err.message || 'Something went wrong. Please try again later.');
-    } finally {
-      setIsLoading(false);
+    if (!res.ok) {
+      throw new Error(data.message || 'Something went wrong');
     }
-  };
 
-  return (
-    <div className="forgot-password-container">
-      <h2>Forgot Password</h2>
-      <p>Enter your email address and we'll send you a link to reset your password.</p>
-      
-      {message && (
-        <div className={`message ${isError ? 'error' : 'success'}`}>
-          {message}
-        </div>
-      )}
-      
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="email">Email Address</label>
-          <input
-            type="email"
-            id="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Enter your email"
-            required
-          />
-        </div>
-
-        <button 
-          type="submit" 
-          className="reset-button"
-          disabled={isLoading}
-        >
-          {isLoading ? 'Sending...' : 'Send Reset Link'}
-        </button>
-      </form>
-
-      <div className="back-to-login">
-        <Link to="/login">Back to Login</Link>
-      </div>
-    </div>
-  );
+    alert(data.message);
+  } catch (error) {
+    alert("Error: " + error.message);
+  }
 };
 
-export default Forgotpass;
+
+  return (
+   <div className="forgot-wrapper">
+  <form onSubmit={handleSubmit} className="forgot-container">
+    <h2>Forgot Password</h2>
+    <input
+      type="email"
+      placeholder="Enter your email"
+      required
+      value={email}
+      onChange={(e) => setEmail(e.target.value)}
+    />
+    <button type="submit">Send Reset Link</button>
+  </form>
+</div>
+  );
+}
+
+export default Forgotpassword;

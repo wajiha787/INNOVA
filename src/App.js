@@ -7,6 +7,7 @@ import Signup from "./AccessHub/Signup";
 import Login from "./AccessHub/Login";
 import Dashboard from "./Dashboard/Dashboard";
 import VideoGenerator from './Dashboard/componentsD/Createvidpg1';
+import Forgotpassword from "./AccessHub/Forgotpass";
 import { useEffect } from "react";
 
 function ConditionalHeader() {
@@ -28,6 +29,7 @@ function AppWrapper() {
         <Route path="/pricingH" element={<PricingH />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/forgotpass" element={<Forgotpassword />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/create-video" element={<VideoGenerator />} />
       </Routes>

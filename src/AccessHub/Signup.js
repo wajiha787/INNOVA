@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import "../Styles/Signup.css";
 
 const Signup = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate(); // Hook for navigation
 
   const handleEmailSignup = async (e) => {
     e.preventDefault();
@@ -18,7 +19,7 @@ const Signup = () => {
       const data = await res.json();
       if (!res.ok) throw new Error(data.message);
       alert('Signup successful');
-      window.location.href = '/dashboard';
+      navigate('/dashboard'); // Redirect using useNavigate
     } catch (err) {
       alert(err.message);
     }
@@ -42,7 +43,7 @@ const Signup = () => {
       if (!res.ok) throw new Error(data.message);
       localStorage.setItem('token', data.token);
       alert('Google signup successful!');
-      window.location.href = '/dashboard';
+      navigate('/dashboard'); // Redirect using useNavigate
     } catch (err) {
       alert(err.message);
     }
@@ -58,7 +59,11 @@ const Signup = () => {
 
         <div className="auth-buttons">
           <button className="auth-button google-button" onClick={handleGoogleSignup}>
-            <img src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png" alt="Google" className="auth-icon" />
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png"
+              alt="Google"
+              className="auth-icon"
+            />
             Join with Google
           </button>
         </div>
@@ -83,7 +88,6 @@ const Signup = () => {
           <button type="submit" className="create-account-button">Create Account</button>
         </form>
 
-
         <div className="login-prompt">
           Already have an account? <Link to="/login" className="login-link">Login</Link>
         </div>
@@ -94,7 +98,7 @@ const Signup = () => {
       </div>
 
       <div className="preview-section">
-        <div className="video-box">
+        <div className="video-box1">
           <video controls autoPlay muted loop className="video">
             <source src="/videos/Water-bottleAd.mp4" type="video/mp4" />
           </video>
